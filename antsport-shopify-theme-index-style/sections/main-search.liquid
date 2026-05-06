@@ -1,0 +1,24 @@
+<section class="page-width search-page">
+  <span class="kicker">Cerca</span>
+  <h1 class="product-title">Cerca nel catalogo</h1>
+  <form action="{{ routes.search_url }}" method="get" role="search" class="newsletter">
+    <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Cerca maglie, kit, training...">
+    <button class="btn btn-primary" type="submit">Cerca</button>
+  </form>
+
+  {% if search.performed %}
+    <div class="products" style="margin-top:2rem">
+      {% for item in search.results %}
+        {% if item.object_type == 'product' %}
+          {% render 'product-card', product: item %}
+        {% endif %}
+      {% else %}
+        <p class="lead">Nessun risultato trovato.</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{ "name": "Ricerca", "settings": [] }
+{% endschema %}

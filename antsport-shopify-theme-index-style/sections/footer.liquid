@@ -1,0 +1,37 @@
+<footer class="footer">
+  <div class="page-width footer-grid">
+    <div>
+      <h3>{{ section.settings.brand }}</h3>
+      <p>{{ section.settings.text }}</p>
+    </div>
+    <div>
+      <h3>Shop</h3>
+      <a href="{{ routes.collections_url }}">Teamwear calcio</a><br>
+      <a href="{{ routes.collections_url }}">Allenamento</a><br>
+      <a href="{{ routes.collections_url }}">Accessori</a>
+    </div>
+    <div>
+      <h3>Squadre</h3>
+      <a href="/pages/preventivo-team">Preventivo team</a><br>
+      <a href="/pages/personalizzazioni">Personalizzazioni</a><br>
+      <a href="/pages/guida-taglie">Guida taglie</a>
+    </div>
+    <div>
+      <h3>Supporto</h3>
+      <a href="/pages/contact">Contatti</a><br>
+      <a href="/policies/shipping-policy">Spedizioni</a><br>
+      <a href="/policies/refund-policy">Resi</a>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text", "id": "brand", "label": "Brand", "default": "AntSport" },
+    { "type": "textarea", "id": "text", "label": "Testo", "default": "Teamwear da calcio per squadre che vogliono dominare dentro e fuori dal campo." }
+  ],
+  "presets": [{ "name": "Footer" }]
+}
+{% endschema %}

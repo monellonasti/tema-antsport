@@ -1,0 +1,33 @@
+<section class="page-width cart-page">
+  <span class="kicker">Carrello</span>
+  <h1 class="product-title">Il tuo ordine</h1>
+  {% if cart.item_count > 0 %}
+    <form action="{{ routes.cart_url }}" method="post">
+      {% for item in cart.items %}
+        <div class="cart-item">
+          <div class="product-media">
+            {% if item.image %}
+              {{ item.image | image_url: width: 160 | image_tag: alt: item.title }}
+            {% endif %}
+          </div>
+          <div>
+            <h3>{{ item.product.title }}</h3>
+            <p class="lead">{{ item.variant.title }}</p>
+            <input type="number" name="updates[]" value="{{ item.quantity }}" min="0">
+          </div>
+          <strong>{{ item.final_line_price | money }}</strong>
+        </div>
+      {% endfor %}
+      <h2>Totale: {{ cart.total_price | money }}</h2>
+      <button class="btn btn-secondary" type="submit" name="update">Aggiorna</button>
+      <button class="btn btn-primary" type="submit" name="checkout">Checkout</button>
+    </form>
+  {% else %}
+    <p class="lead">Il carrello è vuoto.</p>
+    <a class="btn btn-primary" href="{{ routes.collections_url }}">Vai al catalogo</a>
+  {% endif %}
+</section>
+
+{% schema %}
+{ "name": "Carrello", "settings": [] }
+{% endschema %}

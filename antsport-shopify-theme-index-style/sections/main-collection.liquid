@@ -1,0 +1,44 @@
+<section class="section">
+  <div class="page-width">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Catalogo</span>
+        <h2>{{ collection.title | default: 'Tutti i prodotti' }}</h2>
+      </div>
+      {% if collection.description != blank %}
+        <p class="lead">{{ collection.description }}</p>
+      {% endif %}
+    </div>
+
+    <div class="collection-layout">
+      <aside class="filter-box">
+        <h3>Filtra</h3>
+        <p class="lead">Kit gara, training, accessori e teamwear.</p>
+      </aside>
+
+      <div class="products">
+        {% paginate collection.products by 12 %}
+          {% for product in collection.products %}
+            {% render 'product-card', product: product %}
+          {% else %}
+            {% for i in (1..8) %}
+              <div class="product-card">
+                <span class="badge">Demo</span>
+                <div class="product-media"><div class="product-shirt"></div></div>
+                <div class="product-info">
+                  <h3>Prodotto AntSport</h3>
+                  <div class="price">€39,90</div>
+                </div>
+              </div>
+            {% endfor %}
+          {% endfor %}
+          {{ paginate | default_pagination }}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Collezione", "settings": [] }
+{% endschema %}

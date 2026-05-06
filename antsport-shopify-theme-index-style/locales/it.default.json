@@ -1,0 +1,16 @@
+{
+  "general": {
+    "search": {
+      "search": "Cerca"
+    },
+    "cart": {
+      "cart": "Carrello"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Aggiungi al carrello",
+      "sold_out": "Esaurito"
+    }
+  }
+}

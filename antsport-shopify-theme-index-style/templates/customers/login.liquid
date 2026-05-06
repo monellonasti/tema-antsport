@@ -1,0 +1,9 @@
+<section class="page-width page-template">
+  <h1 class="product-title">Accedi</h1>
+  {% form 'customer_login' %}
+    {{ form.errors | default_errors }}
+    <input type="email" name="customer[email]" placeholder="Email">
+    <input type="password" name="customer[password]" placeholder="Password">
+    <button class="btn btn-primary" type="submit">Accedi</button>
+  {% endform %}
+</section>

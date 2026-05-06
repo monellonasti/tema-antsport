@@ -1,0 +1,20 @@
+<div class="product-card">
+  {% if product.available %}
+    <span class="badge">Disponibile</span>
+  {% else %}
+    <span class="badge">Sold out</span>
+  {% endif %}
+  <a href="{{ product.url }}">
+    <div class="product-media">
+      {% if product.featured_image %}
+        {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: product.title }}
+      {% else %}
+        <div class="product-shirt"></div>
+      {% endif %}
+    </div>
+    <div class="product-info">
+      <h3>{{ product.title }}</h3>
+      <div class="price">{{ product.price | money }}</div>
+    </div>
+  </a>
+</div>

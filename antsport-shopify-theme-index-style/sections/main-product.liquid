@@ -1,0 +1,30 @@
+<section class="page-width product-page">
+  <div class="product-gallery">
+    {% if product.featured_image %}
+      {{ product.featured_image | image_url: width: 900 | image_tag: loading: 'eager', alt: product.title }}
+    {% else %}
+      <div class="product-media"><div class="product-shirt"></div></div>
+    {% endif %}
+  </div>
+  <div>
+    <span class="kicker">AntSport</span>
+    <h1 class="product-title">{{ product.title }}</h1>
+    <div class="pack-price">{{ product.price | money }}</div>
+    <div class="lead">{{ product.description }}</div>
+    {% form 'product', product %}
+      <select name="id">
+        {% for variant in product.variants %}
+          <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+        {% endfor %}
+      </select>
+      <div class="qty">
+        <input type="number" name="quantity" value="1" min="1">
+      </div>
+      <button class="btn btn-primary" type="submit">Aggiungi al carrello</button>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Prodotto", "settings": [] }
+{% endschema %}

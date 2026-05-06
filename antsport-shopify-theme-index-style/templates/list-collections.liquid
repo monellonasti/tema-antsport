@@ -1,0 +1,14 @@
+<section class="section">
+  <div class="page-width">
+    <span class="kicker">Shop</span>
+    <h2>Collezioni</h2>
+    <div class="category-grid">
+      {% for collection in collections %}
+        <a class="category" href="{{ collection.url }}">
+          <h3>{{ collection.title }}</h3>
+          <span>{{ collection.products_count }} prodotti</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<header class="site-header">
+  <div class="page-width header-inner">
+    <a class="logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      <span class="logo-mark">{{ section.settings.logo_letter }}</span>
+      <span>{{ section.settings.brand_name }}</span>
+    </a>
+
+    <nav class="nav" data-nav>
+      {% if section.settings.menu != blank %}
+        {% for link in linklists[section.settings.menu].links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      {% else %}
+        <a href="{{ routes.root_url }}">Home</a>
+        <a href="{{ routes.collections_url }}">Catalogo</a>
+        <a href="/pages/contact">Contact</a>
+      {% endif %}
+    </nav>
+
+    <div class="header-actions">
+      <a class="icon-btn" href="{{ routes.search_url }}" aria-label="Cerca">⌕</a>
+      <a class="cart-link" href="{{ routes.cart_url }}" aria-label="Carrello">🛒</a>
+      <button class="icon-btn mobile-toggle" data-mobile-toggle aria-expanded="false" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "text", "id": "brand_name", "label": "Nome brand", "default": "ANTSPORT" },
+    { "type": "text", "id": "logo_letter", "label": "Lettera logo", "default": "A" },
+    { "type": "link_list", "id": "menu", "label": "Menu" }
+  ]
+}
+{% endschema %}
