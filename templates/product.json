@@ -1,0 +1,98 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "eyebrow": "AntSport Teamwear",
+        "show_vendor": false,
+        "sale_badge": "Promo team",
+        "available_badge": "Pronto per il team",
+        "soldout_badge": "Esaurito",
+        "show_tax_note": true,
+        "tax_note": "Tasse incluse. Spedizione calcolata al checkout.",
+        "short_text": "Prodotto pensato per squadre di calcio: personalizzabile con logo società, sponsor, nome e numero.",
+        "variant_label": "Scegli taglia / variante",
+        "quantity_label": "Quantità",
+        "add_to_cart_label": "Aggiungi al carrello",
+        "soldout_button_label": "Non disponibile",
+        "show_custom_fields": true,
+        "custom_box_title": "Personalizza il kit",
+        "custom_box_text": "Aggiungi dettagli per squadra, giocatore e numero. Li useremo per preparare la bozza.",
+        "team_name_label": "Nome squadra",
+        "team_name_placeholder": "Es. ASD AntSport",
+        "player_name_label": "Nome giocatore",
+        "player_name_placeholder": "Es. Rossi",
+        "player_number_label": "Numero",
+        "player_number_placeholder": "10",
+        "notes_label": "Note per la personalizzazione",
+        "notes_placeholder": "Colori, sponsor, loghi, richieste particolari...",
+        "secondary_button_label": "Richiedi preventivo squadra",
+        "secondary_button_link": "/pages/preventivo-team",
+        "shipping_title": "Produzione team",
+        "shipping_text": "Bozza grafica e tempi confermati dopo l’ordine.",
+        "return_title": "Supporto grafico",
+        "return_text": "Ti aiutiamo con logo, sponsor, nomi e numeri.",
+        "show_description": true,
+        "description_title": "Descrizione prodotto"
+      },
+      "blocks": {
+        "highlight_team": {
+          "type": "highlight",
+          "settings": {
+            "icon": "⚽",
+            "title": "Team ready",
+            "text": "Pensato per squadre"
+          }
+        },
+        "highlight_custom": {
+          "type": "highlight",
+          "settings": {
+            "icon": "✍️",
+            "title": "Custom",
+            "text": "Nome, numero e logo"
+          }
+        },
+        "highlight_fast": {
+          "type": "highlight",
+          "settings": {
+            "icon": "🚀",
+            "title": "Bozza rapida",
+            "text": "Conferma grafica veloce"
+          }
+        },
+        "accordion_custom": {
+          "type": "accordion",
+          "settings": {
+            "title": "Personalizzazione",
+            "text": "<p>Inserisci i dettagli nei campi dedicati. Per ordini squadra puoi richiedere un preventivo dedicato.</p>"
+          }
+        },
+        "accordion_sizes": {
+          "type": "accordion",
+          "settings": {
+            "title": "Taglie e vestibilità",
+            "text": "<p>Consigliamo di indicare nelle note eventuali richieste su taglie miste o kit per tutta la rosa.</p>"
+          }
+        },
+        "accordion_delivery": {
+          "type": "accordion",
+          "settings": {
+            "title": "Produzione e consegna",
+            "text": "<p>I tempi vengono confermati dopo la bozza grafica e variano in base alla quantità e al tipo di personalizzazione.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "highlight_team",
+        "highlight_custom",
+        "highlight_fast",
+        "accordion_custom",
+        "accordion_sizes",
+        "accordion_delivery"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
